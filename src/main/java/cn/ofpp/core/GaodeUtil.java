@@ -52,13 +52,13 @@ public class GaodeUtil {
             Integer ints = r.nextInt(4);
             switch (ints){
                 case 0:
-                    weatherInfo.setTips("晒死啦晒死啦，梅宝记得明天出门涂防晒！");
+                    weatherInfo.setTips("晒死啦晒死啦，肖宝记得明天出门涂防晒！");
                     break;
                 case 1:
-                    weatherInfo.setTips("小黑温馨提示：明天会很热！");
+                    weatherInfo.setTips("小邹温馨提示：明天会很热！");
                     break;
                 case 2:
-                    weatherInfo.setTips("妈耶，明天"+ daytemp +"度，小梅宝贝要注意啦~");
+                    weatherInfo.setTips("妈耶，明天"+ daytemp +"度，肖宝贝要注意啦~");
                     break;
                 case 3:
                     weatherInfo.setTips("呼呼呼~给你吹吹，吹走明天的热气~");
@@ -73,10 +73,10 @@ public class GaodeUtil {
                     weatherInfo.setTips("明天有雨，要记得带伞哟宝贝！");
                     break;
                 case 1:
-                    weatherInfo.setTips("小黑温馨提示：明天要下雨！");
+                    weatherInfo.setTips("小邹温馨提示：明天要下雨！");
                     break;
                 case 2:
-                    weatherInfo.setTips("要下雨啦，要下雨啦，不要忘记带伞梅宝~");
+                    weatherInfo.setTips("要下雨啦，要下雨啦，不要忘记带伞肖宝~");
                     break;
                 case 3:
                     weatherInfo.setTips("如果明天下雨的话，说明我在想你~");
@@ -93,10 +93,10 @@ public class GaodeUtil {
                     weatherInfo.setNotes("oh~又到了提醒宝贝写日志时间~");
                     break;
                 case 2:
-                    weatherInfo.setNotes("辛苦的一天又快结束了，记得写日志梅宝~");
+                    weatherInfo.setNotes("辛苦的一天又快结束了，记得写日志肖宝~");
                     break;
                 case 3:
-                    weatherInfo.setNotes("来自臭宝的提示：记得写日志~");
+                    weatherInfo.setNotes("来自肖宝的提示：记得写日志~");
             }
         }
 
