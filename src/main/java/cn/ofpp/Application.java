@@ -24,7 +24,7 @@ public class Application {
 
         // new 一个 女友  oPYS36H7vays1A03owdfR_Y1HQYw oPYS36AoWgHgcSchYdlRvt12kkT4
         GirlFriend girlFriend = new GirlFriend("肖宝",
-                "江西省", "南昌市", "2000-12-31", "2020-11-27", "oPYS36CxPfmt7C4UB0sxKbqVOuao","2023-12-31");
+                "江西省", "南昌市", "2000-12-31", "2020-11-27", "oj77H6C1EboctuyTGfiKq0YKqsBE","2023-12-31");
         //彩虹屁随机句子，可自定义chp（彩虹屁）、pyq（朋友圈文案）、du（毒鸡汤）
         ShaDiaoSentence sentence = ShaDiaoSentence.getSentence("chp");
         Wx.sendTemplateMessage(MessageFactory.resolveMessage(girlFriend,sentence));
