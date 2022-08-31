@@ -48,9 +48,8 @@ public class Application {
 //        //彩虹屁随机句子，可自定义chp（彩虹屁）、pyq（朋友圈文案）、du（毒鸡汤）
 //        Wx.sendTemplateMessage(MessageFactory.resolveMessage(liuyuxin,sentence,null));
 
-        //GirlFriend ziji = new GirlFriend("小宝贝","江西省", "南昌市", "1999-12-31", null, "oeMpB5zDDCJHLmicxTBaHlJZbreg",null);
-        //彩虹屁随机句子，可自定义chp（彩虹屁）、pyq（朋友圈文案）、du（毒鸡汤）
-        //Wx.sendTemplateMessage(MessageFactory.resolveMessage(ziji,sentence,muban));
+        GirlFriend ziji = new GirlFriend("小宝贝","江西省", "南昌市", "1999-12-31", null, "oeMpB5zDDCJHLmicxTBaHlJZbreg",null);
+        Wx.sendTemplateMessage(MessageFactory.resolveMessage(ziji,sentence,muban));
 
 
 
