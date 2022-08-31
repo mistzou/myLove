@@ -23,11 +23,35 @@ public class Application {
         Bootstrap.init();
 
         // new 一个 女友  oPYS36H7vays1A03owdfR_Y1HQYw oPYS36AoWgHgcSchYdlRvt12kkT4
-        GirlFriend girlFriend = new GirlFriend("肖宝",
-                "江西省", "南昌市", "2000-12-31", "2020-11-27", "oj77H6C1EboctuyTGfiKq0YKqsBE","2023-12-31");
+        //邹利勤
+        GirlFriend girlFriend = new GirlFriend("利勤宝贝",
+                "江西省", "南昌市", "1998-10-09", "2020-11-27", "oeMpB53jaqLpw8gz1OWsMD9aEOCs","1998-10-09");
         //彩虹屁随机句子，可自定义chp（彩虹屁）、pyq（朋友圈文案）、du（毒鸡汤）
-        ShaDiaoSentence sentence = ShaDiaoSentence.getSentence("chp");
-        Wx.sendTemplateMessage(MessageFactory.resolveMessage(girlFriend,sentence));
+        ShaDiaoSentence sentence = ShaDiaoSentence.getSentence("du");
+        Wx.sendTemplateMessage(MessageFactory.resolveMessage(girlFriend,sentence,null));
+
+        GirlFriend qujie = new GirlFriend("瞿宝",
+                "江西省", "南昌市", "2000-02-28", null, "oeMpB53aVMmLltF44jHq9VK20jv4","2023-02-28");
+        //彩虹屁随机句子，可自定义chp（彩虹屁）、pyq（朋友圈文案）、du（毒鸡汤）
+        Wx.sendTemplateMessage(MessageFactory.resolveMessage(qujie,sentence,null));
+
+        GirlFriend dagou = new GirlFriend("大狗",
+                "广东省", "广州市", "1998-12-25", null, "oeMpB5xGurw_6F9G8q7KYXTThpf0","1998-12-25");
+        //彩虹屁随机句子，可自定义chp（彩虹屁）、pyq（朋友圈文案）、du（毒鸡汤）
+        Wx.sendTemplateMessage(MessageFactory.resolveMessage(dagou,sentence,null));
+
+        GirlFriend liuyuxin = new GirlFriend("欣狗子",
+                "江西省", "九江市", "2000-08-26", null, "oeMpB5xE3spAi2jDGuZki-nyoG80","2023-08-26");
+        //彩虹屁随机句子，可自定义chp（彩虹屁）、pyq（朋友圈文案）、du（毒鸡汤）
+        Wx.sendTemplateMessage(MessageFactory.resolveMessage(liuyuxin,sentence,null));
+
+        GirlFriend ziji = new GirlFriend("小宝贝",
+                "江西省", "南昌市", "1999-12-31", null, "oeMpB5zDDCJHLmicxTBaHlJZbreg","2023-12-31");
+        //彩虹屁随机句子，可自定义chp（彩虹屁）、pyq（朋友圈文案）、du（毒鸡汤）
+        Wx.sendTemplateMessage(MessageFactory.resolveMessage(ziji,sentence,null));
+
+
+
 
         // new 一个 男友 也可单独针对一个friend设置模板ID 以达到不同人不同消息
         BoyFriend boyFriend = new BoyFriend("某男友",

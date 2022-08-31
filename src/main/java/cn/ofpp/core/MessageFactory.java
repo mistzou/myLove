@@ -17,11 +17,14 @@ import static cn.ofpp.core.GaodeUtil.getAdcCode;
  */
 public class MessageFactory {
 
-    public static WxMpTemplateMessage resolveMessage(Friend friend,ShaDiaoSentence sentence) {
+    public static WxMpTemplateMessage resolveMessage(Friend friend,ShaDiaoSentence sentence,String muban) {
+        if (StringUtils.isEmpty(muban)){
+            muban = Bootstrap.TEMPLATE_ID;
+        }
         return WxMpTemplateMessage.builder()
                 .url("https://ofpp.cn") // 点击后的跳转链接 可自行修改 也可以不填
                 .toUser(friend.getUserId())
-                .templateId(StrUtil.emptyToDefault(friend.getTemplateId(), Bootstrap.TEMPLATE_ID))
+                .templateId(StrUtil.emptyToDefault(friend.getTemplateId(), muban))
                 .data(buildData(friend,sentence))
                 .build();
     }
@@ -63,22 +66,22 @@ public class MessageFactory {
         WeatherInfo weather = GaodeUtil.getNowWeatherInfo(getAdcCode(friend.getProvince()+friend.getCity(), friend.getCity()));
         RandomAncientPoetry.AncientPoetry ancientPoetry = RandomAncientPoetry.getNext();
         List<WxMpTemplateData> wxMpTemplateDataList = new ArrayList<>();
-        wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("friendName").value(friend.getFullName()).color("#000000").build());
+        wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("friendName").value(friend.getFullName()).color("#99ccff").build());
         wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("howLongLived").value(friend.getHowLongLived()).color("#000000").build());
         wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("nextMemorialDay").value(friend.getNextMemorialDay()).color("#000000").build());
-        wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("province").value(friend.getProvince()).color("#000000").build());
+        wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("province").value(friend.getProvince()).color("#0033cc").build());
         wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("city").value(friend.getCity()).color("#000000").build());
-        wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("weather").value(weather.getDayweather()).color("#000000").build());
-        wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("temperature").value(weather.getDaytemp()).color("#000000").build());
-        wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("winddirection").value(weather.getDaywind()).color("#000000").build());
+        wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("weather").value(weather.getDayweather()).color("#FF7F24").build());
+        wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("temperature").value(weather.getDaytemp()).color("#EEEE00").build());
+        wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("winddirection").value(weather.getDaywind()).color("#CD00CD").build());
         wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("windpower").value(weather.getDaypower()).color("#000000").build());
         if (StringUtils.isNotBlank(weather.getNotes())){
             wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("notes").value(weather.getNotes()).color("#000000").build());
         }
         if (StringUtils.isNotBlank(weather.getTips())){
-            wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("humidity").value(weather.getTips()).color("#000000").build());
+            wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("humidity").value(weather.getTips()).color("#EEB4B4").build());
         }
-        wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("content").value(sentence.getText()).color("#000000").build());
+        wxMpTemplateDataList.add(TemplateDataBuilder.builder().name("content").value(sentence.getText()).color("#CD0000").build());
         return wxMpTemplateDataList;
     }
 
